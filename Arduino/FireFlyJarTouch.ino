@@ -26,19 +26,18 @@ int EVENODD = 6 % 2;
 int direction = 1;
 
 // Start Sensor
-CapacitiveSensor cs_4_2 = CapacitiveSensor(0, 1); // 10M resistor between pins 4 & 2, pin 2 is sensor pin, add a wire and or foil if desired
+CapacitiveSensor cs1 = CapacitiveSensor(0, 1); // 10M resistor between pins 0 & 1
 
 // Start Strip
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(5, 4, NEO_RGB + NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(5, 4, NEO_GRB + NEO_KHZ800);
 
 void setup() {
-//    cs_4_2.set_CS_AutocaL_Millis(0xFFFFFFFF); // turn off autocalibrate on channel 1 - just as an example
     strip.begin();
     strip.show(); // Initialize all pixels to 'off'
 }
 
 void loop() {
-    long total1 = cs_4_2.capacitiveSensor(30);    
+    long total1 = cs1.capacitiveSensor(30);    
     if (total1 > 300 && (millis() - mark) > 800) {
         j = 0;
         mark = millis();
@@ -65,8 +64,7 @@ void doSomething(int var) {
         rainbow(20);
         break;
     case 2:
-        colorWipe(strip.Color(random(255), random(255), random(255)), 140); // Red
-        //delay(50);
+        colorWipe(strip.Color(random(255), random(255), random(255)), 140); 
         break;
     case 3:
         twinkle(3, random(0, 4));
@@ -113,7 +111,7 @@ void doSomething(int var) {
 }
 
 // PATTERN FUNCTIONS
-// Created, or from Adafruit and Funkboxing!
+// Created, or adapted from Adafruit and Funkboxing!
 
 // Fill the dots one after the other with a color
 void colorWipe(uint32_t c, uint8_t wait) {
@@ -212,11 +210,6 @@ void flame() {
 
         strip.setPixelColor(i, colors[0], colors[1], colors[2]);
     }    
-       // int ih = horizontal_index(i);
-     //   strip.setPixelColor(ih, colors[0], colors[1], colors[2]);
-        //strip.setPixelColor(4, 255, 214, 170);
-
-
         strip.show();
         delay(idelay);
    
@@ -228,7 +221,6 @@ void sineFirefly(int wait) {
           if(counter<16) {
             float colorV = sin((6.28/30)*(float)(counter)) *255;
             strip.setPixelColor(myPix,colorV,colorV,colorV);
-	    //strip.setPixelColor(antipodal_index(myPix),255-colorV,255-colorV,255-colorV);
 
            strip.show();
            delay(wait);
@@ -261,7 +253,6 @@ void colorFirefly(int wait) {
             float colorV = sin((6.28/30)*(float)(counter)) *255;
             HSVtoRGB((359/16)*counter, 255, colorV, colors);
             strip.setPixelColor(myPix, colors[0], colors[1], colors[2]);
-           // strip.setPixelColor(myPix,colorV,colorV,colorV);
 
            strip.show();
            delay(wait);
