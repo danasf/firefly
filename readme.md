@@ -20,17 +20,18 @@ Instructions
 
 ![ATtiny85](./Misc/attiny.jpg)
 
-More Info
+Troubleshooting
 ------------
 
-Need help getting started with ATtiny and lights? I wrote an [Instructable](http://www.instructables.com/id/Use-a-1-ATTiny-to-drive-addressable-RGB-LEDs/) on that too.
-
-If you're seeing 'R_AVR_13_PCREL' errors when you try to compile, try this [thread](http://forum.arduino.cc/index.php?topic=116674.0) for solutions. This is a known problem with Arduino IDE, ATtiny and sketches > 4k.
+* Need help getting started with ATtiny and lights? I wrote an [Instructable](http://www.instructables.com/id/Use-a-1-ATTiny-to-drive-addressable-RGB-LEDs/) on that too.
+* If you're seeing 'R_AVR_13_PCREL' errors when you try to compile, try this [thread](http://forum.arduino.cc/index.php?topic=116674.0) for solutions. This is a known problem with Arduino IDE, ATtiny and sketches > 4k.
+* Some NeoPixels are wired RGB, others GRB, or BRG. If colours are odd try changing this in the strip initialization!
+* If you're running your jar on batteries and experiencing trouble with the capacitive sensor, read about [grounding and other issues](http://playground.arduino.cc/Main/CapacitiveSensor).
 
 Acknowledgements
 ------------
 
-Much thanks to [Adafruit](http://adafruit.com) for their NeoPixel Library, wonderful tutorials and all the work they do for open source, hardware hacking communities. Support them!
+Much thanks to [Adafruit](http://adafruit.com) for their [NeoPixel Library](https://github.com/adafruit/Adafruit_NeoPixel), wonderful tutorials and all the work they do for open source, hardware hacking communities. Support them!
 
 [Funkboxing](http://funkboxing.com/wordpress/?p=2154) for inspiring and cool LED effects and helper functions.
 
