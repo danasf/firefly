@@ -3,11 +3,11 @@ Programmable Touch Firefly Jar
 
 ![ATtiny85](./Misc/jarsmall.jpg)
 
-Programmable touch firefly lamp. For use with ATtiny85 (or Arduino!) and [Neopixel](https://www.adafruit.com/categories/37) (WS2811/12/12B) RGB LEDs. 
+Programmable touch firefly lamp. For use with ATtiny85 (or Arduino) based boards and [Neopixel](https://www.adafruit.com/categories/37) (WS2811/12/12B) RGB LEDs. 
 
 Want to make one? Full details over at [Instructables](http://www.instructables.com/id/Programmable-LED-Firefly-Jar/).
 
-You can grab PCBs via [OSHPark](http://oshpark.com/shared_projects/p76iCXLt).
+You can order PCBs via [OSHPark](http://oshpark.com/shared_projects/p76iCXLt).
 
 Instructions
 ------------
